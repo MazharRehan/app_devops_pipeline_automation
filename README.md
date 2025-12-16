@@ -3,15 +3,15 @@
 This repository implements a complete Git flow–based CI/CD pipeline for a static website using GitHub Actions, GitHub Environments, Branch Protection rules, and GitHub Pages. The DevOps focus is on reliable automation, environment isolation, and quality gates (linting/tests) across development, staging, and production.
 
 - Repository: [MazharRehan/term-project-f24](https://github.com/MazharRehan/term-project-f24/tree/develop)
-- Live (team) website: [term-project-f24](https://umansheikh0611.github.io/term-project-f24)
+- Live (team) website: [term-project-f24](https://mazharrehan.github.io/term-project-f24/)
 
 ## Status
 
 - Development CI: ![CI Development](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-development.yaml/badge.svg?branch=develop)
-- Staging CI: ![CI Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-staging.yaml/badge.svg?branch=release)
+- Staging CI: ![CI Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-staging.yaml/badge.svg?branch=release/1.0.0)
 - Production CI: ![CI Production](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-production.yaml/badge.svg?branch=production)
 - Development CD: ![CD Development](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-development.yaml/badge.svg?branch=develop)
-- Staging CD: ![CD Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-staging.yaml/badge.svg?branch=release)
+- Staging CD: ![CD Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-staging.yaml/badge.svg?branch=release/1.0.0)
 - Production CD: ![CD Production](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-production.yaml/badge.svg?branch=production)
 
 ## Contents
