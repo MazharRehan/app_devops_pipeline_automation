@@ -2,27 +2,27 @@
 
 This repository implements a complete Git flow–based CI/CD pipeline for a static website using GitHub Actions, GitHub Environments, Branch Protection rules, and GitHub Pages. The DevOps focus is on reliable automation, environment isolation, and quality gates (linting/tests) across development, staging, and production.
 
-- Repository: [MazharRehan/term-project-f24](https://github.com/MazharRehan/term-project-f24/tree/develop)
-- Live (team) website: [term-project-f24](https://mazharrehan.github.io/term-project-f24/)
+- Repository: [MazharRehan/app_devops_pipeline_automation](https://github.com/MazharRehan/app_devops_pipeline_automation/tree/develop)
+- Website: [app_devops_pipeline_automation](https://mazharrehan.github.io/app_devops_pipeline_automation/)
 
 ## Status
 
-- Development CI: ![CI Development](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-development.yaml/badge.svg?branch=develop)
-- Staging CI: ![CI Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-staging.yaml/badge.svg?branch=release/1.0.0)
-- Production CI: ![CI Production](https://github.com/MazharRehan/term-project-f24/actions/workflows/ci-production.yaml/badge.svg?branch=production)
-- Development CD: ![CD Development](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-development.yaml/badge.svg?branch=develop)
-- Staging CD: ![CD Staging](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-staging.yaml/badge.svg?branch=release/1.0.0)
-- Production CD: ![CD Production](https://github.com/MazharRehan/term-project-f24/actions/workflows/cd-production.yaml/badge.svg?branch=production)
+- Development CI: ![CI Development](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/ci-development.yaml/badge.svg?branch=develop)
+- Staging CI: ![CI Staging](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/ci-staging.yaml/badge.svg?branch=release/1.0.0)
+- Production CI: ![CI Production](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/ci-production.yaml/badge.svg?branch=production)
+- Development CD: ![CD Development](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/cd-development.yaml/badge.svg?branch=develop)
+- Staging CD: ![CD Staging](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/cd-staging.yaml/badge.svg?branch=release/1.0.0)
+- Production CD: ![CD Production](https://github.com/MazharRehan/app_devops_pipeline_automation/actions/workflows/cd-production.yaml/badge.svg?branch=production)
 
 ## Contents
 
 - .github/workflows
-  - [ci-development.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-development.yaml)
-  - [cd-development.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-development.yaml)
-  - [ci-staging.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-staging.yaml)
-  - [cd-staging.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-staging.yaml)
-  - [ci-production.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-production.yaml)
-  - [cd-production.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-production.yaml)
+  - [ci-development.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-development.yaml)
+  - [cd-development.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-development.yaml)
+  - [ci-staging.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-staging.yaml)
+  - [cd-staging.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-staging.yaml)
+  - [ci-production.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-production.yaml)
+  - [cd-production.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-production.yaml)
 - src
   - Static site source (HTML/CSS/assets)
 - dist
@@ -57,7 +57,7 @@ Configured GitHub Environments (with protections and approvals as appropriate):
 Workflows are separated by environment and responsibility (CI vs CD). File names reflect their role.
 
 - Development
-  - CI: [.github/workflows/ci-development.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-development.yaml)
+  - CI: [.github/workflows/ci-development.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-development.yaml)
     - Trigger: pull_request → develop
     - Steps (key):
       - Checkout
@@ -70,19 +70,19 @@ Workflows are separated by environment and responsibility (CI vs CD). File names
         ```
         npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
         ```
-  - CD: [.github/workflows/cd-development.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-development.yaml)
+  - CD: [.github/workflows/cd-development.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-development.yaml)
     - Purpose: build artifacts and deploy to development-env on changes integrated into develop
 
 - Staging
-  - CI: [.github/workflows/ci-staging.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-staging.yaml)
+  - CI: [.github/workflows/ci-staging.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-staging.yaml)
     - Purpose: validate bugfix PRs into release (tests/build/analysis)
-  - CD: [.github/workflows/cd-staging.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-staging.yaml)
+  - CD: [.github/workflows/cd-staging.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-staging.yaml)
     - Purpose: build and deploy release branch to staging-env
 
 - Production
-  - CI: [.github/workflows/ci-production.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/ci-production.yaml)
+  - CI: [.github/workflows/ci-production.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/ci-production.yaml)
     - Purpose: final test/lint/build on PRs from release → production
-  - CD: [.github/workflows/cd-production.yaml](https://github.com/MazharRehan/term-project-f24/blob/develop/.github/workflows/cd-production.yaml)
+  - CD: [.github/workflows/cd-production.yaml](https://github.com/MazharRehan/app_devops_pipeline_automation/blob/develop/.github/workflows/cd-production.yaml)
     - Purpose: deploy to production-env after PR merge, with manual approval
 
 ## Quality Gates
@@ -158,7 +158,7 @@ Production hosting is via GitHub Pages. The team’s public site is available at
 ## Directory Structure
 
 ```
-term-project-f24/
+app_devops_pipeline_automation/
 ├── .github/
 │   └── workflows/
 │       ├── cd-development.yaml
